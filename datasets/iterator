@@ -4,3 +4,4 @@ for filename in /home/prashanth/Documents/IAS_Dataset/*.csv; do
         ./shrink.py "$filename"
     done
 done
+rename 's/csi/csv/g' *.csi

@@ -1,0 +1,6 @@
+#!/bin/bash
+for filename in /home/prashanth/Documents/IAS_Dataset/*.csv; do
+    for ((i=0; i<=3; i++)); do
+        ./shrink.py "$filename"
+    done
+done

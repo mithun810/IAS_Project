@@ -1,0 +1,204 @@
+ICMP Messages/sec,129,201
+ICMP Messages Received/sec,122,179
+ICMP Messages Received Errors,171,194
+ICMP Received Dest. Unreachable,123,195
+ICMP Received Time Exceeded,170,202
+ICMP Received Parameter Problem,169,141
+ICMP Received Source Quench,168,138
+ICMP Received Redirect/sec,167,171
+ICMP Received Echo/sec,166,198
+ICMP Received Echo Reply/sec,165,150
+ICMP Received Timestamp/sec,164,136
+ICMP Received Timestamp Reply/sec,163,170
+ICMP Received Address Mask,162,167
+ICMP Received Address Mask Reply,158,128
+ICMP Messages Sent/sec,134,140
+ICMP Messages Outbound Errors,159,188
+ICMP Sent Destination Unreachable,133,154
+ICMP Sent Time Exceeded,157,132
+ICMP Sent Parameter Problem,148,184
+ICMP Sent Source Quench,149,183
+ICMP Sent Redirect/sec,150,147
+ICMP Sent Echo/sec,132,143
+ICMP Sent Echo Reply/sec,147,164
+ICMP Sent Timestamp/sec,153,157
+ICMP Sent Timestamp Reply/sec,154,129
+ICMP Sent Address Mask,152,177
+ICMP Sent Address Mask Reply,156,176
+IPv4 Datagrams/sec,98,114
+IPv4 Datagrams Received/sec,127,122
+IPv4 Datagrams Received Header Errors,161,163
+IPv4 Datagrams Received Address Errors,131,155
+IPv4 Datagrams Forwarded/sec,190,191
+IPv4 Datagrams Received Unknown Protocol,124,199
+IPv4 Datagrams Received Discarded,141,151
+IPv4 Datagrams Received Delivered/sec,117,113
+IPv4 Datagrams Sent/sec,97,115
+IPv4 Datagrams Outbound Discarded,199,197
+IPv4 Datagrams Outbound No Route,135,137
+IPv4 Fragments Received/sec,198,158
+IPv4 Fragments Re-assembled/sec,197,152
+IPv4 Fragment Re-assembly Failures,196,174
+IPv4 Fragmented Datagrams/sec,195,175
+IPv4 Fragmentation Failures,194,180
+IPv4 Fragments Created/sec,203,162
+Memory Page Faults/sec,61,73
+Memory Available Bytes,59,21
+Memory Committed Bytes,48,22
+Memory Commit Limit,176,13
+Memory Write Copies/sec,95,99
+Memory Transition Faults/sec,87,80
+Memory Cache Faults/sec,68,91
+Memory Demand Zero Faults/sec,63,76
+Memory Pages/sec,82,83
+Memory Pages Input/sec,81,85
+Memory Page Reads/sec,93,96
+Memory Pages Output/sec,99,102
+Memory Pool Paged Bytes,71,44
+Memory Pool Nonpaged Bytes,76,58
+Memory Page Writes/sec,120,118
+Memory Pool Paged Allocs,92,89
+Memory Pool Nonpaged Allocs,105,90
+Memory Free System Page Table Entries,143,54
+Memory Cache Bytes,54,57
+Memory Cache Bytes Peak,51,55
+Memory Pool Paged Resident Bytes,72,45
+Memory System Code Total Bytes,145,62
+Memory System Code Resident Bytes,103,67
+Memory System Driver Total Bytes,121,64
+Memory System Driver Resident Bytes,112,63
+Memory System Cache Resident Bytes,53,56
+Memory % Committed Bytes In Use,96,82
+Memory Available KBytes,94,77
+Memory Available MBytes,128,108
+Memory Transition Pages RePurposed/sec,78,142
+Memory Free & Zero Page List Bytes,42,30
+Memory Modified Page List Bytes,64,53
+Memory Standby Cache Reserve Bytes,45,40
+Memory Standby Cache Normal Priority Bytes,43,34
+Memory Standby Cache Core Bytes,151,169
+Network Interface Bytes Total/sec,84,84
+Network Interface Packets/sec,102,105
+Network Interface Packets Received/sec,125,119
+Network Interface Packets Sent/sec,101,106
+Network Interface Current Bandwidth,144,20
+Network Interface Bytes Received/sec,90,104
+Network Interface Packets Received Unicast/sec,126,120
+Network Interface Packets Received Non-Unicast/sec,138,153
+Network Interface Packets Received Discarded,172,127
+Network Interface Packets Received Errors,160,168
+Network Interface Packets Received Unknown,155,149
+Network Interface Bytes Sent/sec,85,86
+Network Interface Packets Sent Unicast/sec,100,123
+Network Interface Packets Sent Non-Unicast/sec,118,107
+Network Interface Packets Outbound Discarded,173,148
+Network Interface Packets Outbound Errors,175,192
+Network Interface Output Queue Length,174,135
+Network Interface Offloaded Connections,201,182
+PhysicalDisk Current Disk Queue Length,142,165
+PhysicalDisk % Disk Time,12,14
+PhysicalDisk Avg. Disk Queue Length,13,16
+PhysicalDisk % Disk Read Time,26,17
+PhysicalDisk Avg. Disk Read Queue Length,27,19
+PhysicalDisk % Disk Write Time,19,51
+PhysicalDisk Avg. Disk Write Queue Length,20,50
+PhysicalDisk Avg. Disk sec/Transfer,11,15
+PhysicalDisk Avg. Disk sec/Read,28,18
+PhysicalDisk Avg. Disk sec/Write,18,52
+PhysicalDisk Disk Transfers/sec,77,93
+PhysicalDisk Disk Reads/sec,91,98
+PhysicalDisk Disk Writes/sec,75,101
+PhysicalDisk Disk Bytes/sec,15,23
+PhysicalDisk Disk Read Bytes/sec,32,26
+PhysicalDisk Disk Write Bytes/sec,17,41
+PhysicalDisk Avg. Disk Bytes/Transfer,14,24
+PhysicalDisk Avg. Disk Bytes/Read,33,27
+PhysicalDisk Avg. Disk Bytes/Write,16,42
+PhysicalDisk % Idle Time,3,9
+PhysicalDisk Split IO/Sec,89,109
+Process % Processor Time,7,3
+Process % User Time,31,43
+Process % Privileged Time,5,5
+Process Virtual Bytes Peak,40,11
+Process Virtual Bytes,39,12
+Process Page Faults/sec,65,79
+Process Working Set Peak,58,25
+Process Working Set,60,28
+Process Page File Bytes Peak,52,29
+Process Page File Bytes,50,32
+Process Private Bytes,49,31
+Process Thread Count,113,110
+Process Priority Base,185,166
+Process Elapsed Time,56,1
+Process ID Process,184,139
+Process Creating Process ID,179,178
+Process Pool Paged Bytes,86,66
+Process Pool Nonpaged Bytes,83,78
+Process Handle Count,111,103
+Process IO Read Operations/sec,34,97
+Process IO Write Operations/sec,73,100
+Process IO Data Operations/sec,36,92
+Process IO Other Operations/sec,46,75
+Process IO Read Bytes/sec,24,38
+Process IO Write Bytes/sec,9,59
+Process IO Data Bytes/sec,8,36
+Process IO Other Bytes/sec,21,60
+Process Working Set - Private,62,37
+Processor % Processor Time,1,7
+Processor % User Time,30,39
+Processor % Privileged Time,25,33
+Processor Interrupts/sec,67,70
+Processor % DPC Time,44,74
+Processor % Interrupt Time,41,65
+Processor DPCs Queued/sec,79,87
+Processor DPC Rate,137,181
+Processor % Idle Time,2,8
+Processor % C1 Time,0,10
+Processor % C2 Time,146,134
+Processor % C3 Time,202,185
+Processor C1 Transitions/sec,66,71
+Processor C2 Transitions/sec,177,130
+Processor C3 Transitions/sec,178,189
+System File Read Operations/sec,35,94
+System File Write Operations/sec,74,95
+System File Control Operations/sec,47,72
+System File Read Bytes/sec,23,35
+System File Write Bytes/sec,10,47
+System File Control Bytes/sec,22,49
+System Context Switches/sec,69,68
+System System Calls/sec,38,61
+System File Data Operations/sec,37,88
+System System Up Time,55,0
+System Processor Queue Length,130,203
+System Processes,139,121
+System Threads,114,111
+System Alignment Fixups/sec,180,193
+System Exception Dispatches/sec,80,81
+System Floating Emulations/sec,181,190
+System % Registry Quota In Use,88,48
+TCPv4 Segments/sec,106,126
+TCPv4 Connections Established,182,186
+TCPv4 Connections Active,108,160
+TCPv4 Connections Passive,183,131
+TCPv4 Connection Failures,104,133
+TCPv4 Connections Reset,136,144
+TCPv4 Segments Received/sec,119,187
+TCPv4 Segments Sent/sec,109,161
+TCPv4 Segments Retransmitted/sec,107,145
+Thread Context Switches/sec,70,69
+Thread % Processor Time,6,4
+Thread % User Time,29,46
+Thread % Privileged Time,4,6
+Thread Elapsed Time,57,2
+Thread Priority Current,186,196
+Thread Priority Base,187,125
+Thread Start Address,188,146
+Thread Thread State,189,156
+Thread Thread Wait Reason,191,124
+Thread ID Process,192,159
+Thread ID Thread,200,172
+UDPv4 Datagrams/sec,110,112
+UDPv4 Datagrams Received/sec,115,117
+UDPv4 Datagrams No Port/sec,140,173
+UDPv4 Datagrams Received Errors,193,200
+UDPv4 Datagrams Sent/sec,116,116

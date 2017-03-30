@@ -5,23 +5,23 @@ import pandas
 import numpy
 import csv
 # load data
-dataframe = pandas.read_csv("merged.csv")
+dataframe = pandas.read_csv("Newdata.csv")
 print len(dataframe)
 print len(dataframe.columns)
 array = dataframe.values
 #Storing the attribute names
 attribute=[]
-with open('merged.csv', 'r') as f:
+with open('Newdata.csv', 'r') as f:
     first_line = f.readline()
 attributes=first_line.split(',')
 attributes=attributes[:-1]
 print attributes
 #Separating every record without the Class Label
-X = array[:,0:204]
+X = array[:,0:dataframe.shape[1]-1]
 print "X"
 print X
 #Separating only the Class Labels for all Records
-Y = array[:,204]
+Y = array[:,dataframe.shape[1]-1]
 print "Y"
 print Y
 # fit a SVM model to the data

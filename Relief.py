@@ -1,7 +1,7 @@
 '''
 IMPORTANT
 Instructions to run this program
-Use this program as module calling load_and_run(filename,number_of_iterations,BenignClassValue)
+To use this program as module calling load_and_run(filename,number_of_iterations,BenignClassValue)
 returns a rank array'''
 import pandas as pd
 import numpy as np
@@ -10,7 +10,7 @@ import math
 import os
 
 
-
+'''The relief algorithm'''
 def relief(df, m, label):
     f_weight = np.zeros(shape=df.shape[1]-1)
     df_wlabel = get_dataframe_with_label(df, label)
@@ -34,10 +34,10 @@ def relief(df, m, label):
     ranks = np.empty(len(array), int)
     ranks[temp] = np.arange(len(array))
     print ranks
-    np.savetxt("ReliefRanks.csv", ranks, delimiter=",")
+    np.savetxt("ReliefRanks1.csv", ranks, delimiter=",")
     return ranks
 
-
+'''This function is used to the dataframe that contains a given class label'''
 def get_dataframe_with_label(df, label):
     n_df = pd.DataFrame(columns=df.columns)
     row = 0
@@ -47,6 +47,7 @@ def get_dataframe_with_label(df, label):
             row = row + 1
     return n_df
 
+'''This function is used to the dataframe that does not contain a given class label'''
 
 def get_dataframe_without_label(df, label):
     n_df = pd.DataFrame(columns=df.columns)
@@ -57,6 +58,11 @@ def get_dataframe_without_label(df, label):
             row = row + 1
     return n_df
 
+'''Used to find the nearest miss or nearest hit
+nearest miss - Data Point whose feature vector is the closest to a chosen vector point and does NOT
+belong to the same class label
+nearest hit - Data Point whose feature vector is the closest to a chosen vector point and
+belongs to the same class label'''
 
 def nearest(df, featurevector, featurenumber):
     smallest = 0
@@ -67,10 +73,11 @@ def nearest(df, featurevector, featurenumber):
             smallest = i
     return df.iloc[smallest][featurenumber]
 
+'''Used to return relief score'''
 def load_and_run(filename,m,BenignClassValue):
     return relief(pd.read_csv(filename),m,BenignClassValue)
 def main():
-    x=relief(pd.read_csv("merged.csv"), 100, "None")
+    x=relief(pd.read_csv("fullfeaturedataset.csv"), 100, "None")
     return x
 
 if __name__ == '__main__':

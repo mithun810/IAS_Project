@@ -25,7 +25,7 @@ def loaddata1(dataset1, dataset2):
 
 
 def classifyandpredict(trainX, trainY, testX, testY):
-	model = SVC()
+	model = SVC(kernel='poly')
 	model.fit(trainX, trainY)
 	expected = testY
 	predicted = model.predict(testX)
@@ -39,7 +39,7 @@ def crossvalidation(dataset, n_folds):
 		dataset = dataset[1:]
 		total = len(dataset)
 		dataset_split = list()
-		dataset_copy = list(dataset)
+		dataset_copy = copy.deepcopy(dataset)
 		fold_size = int(len(dataset) / n_folds)
 		for i in range(n_folds):
 			fold = list()

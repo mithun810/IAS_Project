@@ -7,6 +7,7 @@ import csv
 import copy
 import random
 import pandas as pd
+import math
 from sklearn import datasets
 # load data
 def load_data(filename):
@@ -58,7 +59,7 @@ def getTarget(dataframe,array):
 '''SVM using sklearn'''
 def classifyandpredict(train_X,train_Y,test_X,test_Y):
 # fit a SVM model to the data
-    model = SVC()
+    model = SVC(kernel='rbf',gamma=0.00002, C=10)
     model.fit(train_X,train_Y)
     expected = test_Y
     predicted = model.predict(test_X)
@@ -115,28 +116,53 @@ def main():
                 Yn_test_temp.append(Yn_train_temp[randomindex])
                 del Xn_train_temp[randomindex]
                 del Yn_train_temp[randomindex]
-            train_X.extend(Xn_train_temp)
-            train_Y.extend(Yn_train_temp)
-            test_X.extend(Xn_test_temp)
-            test_Y.extend(Yn_test_temp)
-            df = pd.DataFrame.from_records(train_X)
+        train_X.extend(Xn_train_temp)
+        train_Y.extend(Yn_train_temp)
+        test_X.extend(Xn_test_temp)
+        test_Y.extend(Yn_test_temp)
+        df = pd.DataFrame.from_records(train_X)
         copyof_train_Y=copy.deepcopy(train_Y)
         copyof_test_Y=copy.deepcopy(test_Y)
-
+        wormcount=0
         for idx,X in enumerate(copyof_train_Y):
             if X!='None':
                 copyof_train_Y[idx]='Worm'
+        print copyof_test_Y
         for idx,X in enumerate(copyof_test_Y):
             if X!='None':
+                wormcount=wormcount+1
                 copyof_test_Y[idx]='Worm'
+        print copyof_test_Y
+
+        copyof_test_X=copy.deepcopy(test_X)
+        copyof_test_Xn,copyof_test_Yn=get_dataframe_with_label(copyof_test_X,copyof_test_Y,'None')
+        copyof_test_X,copyof_test_X=get_dataframe_without_label(copyof_test_X,copyof_test_Y,'None')
+        for iter in reversed(xrange(len(copyof_test_Y))):
+            if iter==0:
+                continue
+            length = len(copyof_test_X)
+            nlength = len(copyof_test_X) - wormcount
+            div = math.ceil(length * 1.0 / len(copyof_test_Xn))
+            if div==1.0:
+                break
+            length=len(copyof_test_X)
+            nlength=len(copyof_test_X)-wormcount
+            print nlength
+            div=math.ceil(length*1.0/len(copyof_test_Xn))
+            if (iter % div != 0):
+                del copyof_test_Y[iter]
+                del copyof_test_X[iter]
+
 
         print len(train_Y)+len(test_Y)
-        predicted, expected = classifyandpredict(train_X,copyof_train_Y,test_X,copyof_test_Y )
+        copyof_test_X.extend(copyof_test_Xn)
+        copyof_test_Y.extend(copyof_test_Yn)
+
+        predicted, expected = classifyandpredict(train_X,copyof_train_Y,copyof_test_X,copyof_test_Y )
 
         metriclist.append((copy.deepcopy(predicted),copy.deepcopy(expected)))
     averageaccuracy=0
     for mlist in metriclist:
-        print(metrics.classification_report(mlist[1], mlist[0]))
         print(metrics.confusion_matrix(mlist[1], mlist[0]))
         averageaccuracy=averageaccuracy+(accuracy_score(mlist[1], mlist[0]))
         print "Accuracy : ",(accuracy_score(mlist[1], mlist[0]))*100,"%"

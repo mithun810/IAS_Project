@@ -12,6 +12,7 @@ import os
 
 '''The relief algorithm'''
 def relief(df, m, label):
+    print "REl entered"
     f_weight = np.zeros(shape=df.shape[1]-1)
     df_wlabel = get_dataframe_with_label(df, label)
     df_wolabel = get_dataframe_without_label(df, label)
@@ -35,7 +36,7 @@ def relief(df, m, label):
     ranks[temp] = np.arange(len(array))
     print ranks
     np.savetxt("ReliefRanks1.csv", ranks, delimiter=",")
-    return ranks
+    return ranks.tolist()
 
 '''This function is used to the dataframe that contains a given class label'''
 def get_dataframe_with_label(df, label):

@@ -136,7 +136,7 @@ def main():
 
         copyof_test_X=copy.deepcopy(test_X)
         copyof_test_Xn,copyof_test_Yn=get_dataframe_with_label(copyof_test_X,copyof_test_Y,'None')
-        copyof_test_X,copyof_test_X=get_dataframe_without_label(copyof_test_X,copyof_test_Y,'None')
+        copyof_test_X,copyof_test_Y=get_dataframe_without_label(copyof_test_X,copyof_test_Y,'None')
         for iter in reversed(xrange(len(copyof_test_Y))):
             if iter==0:
                 continue

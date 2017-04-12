@@ -66,7 +66,7 @@ def selectbestfeatures(fitscores,attributes,k):
 	print selectedattributes
 
 def main():
-	filename="fullfeaturedataset.csv"
+	filename="unified.csv"
 	load_csv(filename)
 
 main()

@@ -78,7 +78,7 @@ def nearest(df, featurevector, featurenumber):
 def load_and_run(filename,m,BenignClassValue):
     return relief(pd.read_csv(filename),m,BenignClassValue)
 def main():
-    x=relief(pd.read_csv("fullfeaturedataset.csv"), 100, "None")
+    x=relief(pd.read_csv("unified.csv"), 100, "None")
     return x
 
 if __name__ == '__main__':

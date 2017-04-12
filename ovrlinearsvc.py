@@ -6,13 +6,13 @@ import numpy
 import csv
 from sklearn.multiclass import OneVsRestClassifier
 # load data
-dataframe = pandas.read_csv("fullfeaturedataset.csv")
+dataframe = pandas.read_csv("unified.csv")
 print len(dataframe)
 print len(dataframe.columns)
 array = dataframe.values
 #Storing the attribute names
 attribute=[]
-with open('fullfeaturedataset.csv', 'r') as f:
+with open('unified.csv', 'r') as f:
     first_line = f.readline()
 attributes=first_line.split(',')
 attributes=attributes[:-1]

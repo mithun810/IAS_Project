@@ -62,7 +62,7 @@ def selectbestfeatures(fitscores,attributes,k):
 		attributes.pop(indexattribute)
 
 def main():
-	filename="fullfeaturedataset.csv"
+	filename="unified.csv"
 	X,Y,attributes=load_csv(filename)
 	ranks,attributes,importances=featureextraction(X,Y,attributes)
 	writetofile(ranks,attributes)

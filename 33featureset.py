@@ -11,13 +11,13 @@ import copy
 
 # For unified
 
-def load_csv(filename, ranks):
+def load_csv(filename, ranks,str):
     dataframe = pandas.read_csv(filename)
     with open(filename, 'r') as f:
         first_line = f.readline()
     attributes = first_line.split(',')
     attributes = attributes[:-1]
-    return generatefeatureset(attributes, dataframe, ranks)
+    return generatefeatureset(attributes, dataframe, ranks,str)
 
 
 def getRanksavg():
@@ -31,6 +31,8 @@ def getRanksavg():
         for rank in ranks:
             temp.append(rank[index])
         avgRanks.append(ensemble(temp))
+    print avgRanks
+    return avgRanks
 
 
 def getRanks(filename):
@@ -50,14 +52,13 @@ def ensemble(ranks):
     for index in range(len(ranks[0])):
         temp = 0
         for rank in ranks:
-            print index
             temp = temp + rank[index]
         temp = temp / len(ranks)
         ens.append(temp)
     return ens
 
 
-def generatefeatureset(attributes, dataset, ranks):
+def generatefeatureset(attributes, dataset, ranks,str1):
     attributesre = list()
     k = [5, 10, 20, 30]
     featureset = list()
@@ -75,7 +76,7 @@ def generatefeatureset(attributes, dataset, ranks):
                 newdata.append(dataset.iloc[:, indexminvalue].values.tolist())
                 del R[indexminvalue]
                 del attributesre[indexminvalue]
-            Selectedattributes = ["uni_FS" + str(index) + "_Top_" + str(k[j])] + Selectedattributes
+            Selectedattributes = [str1+"_FS" + str(index) + "_Top_" + str(k[j])] + Selectedattributes
             featureset.append(Selectedattributes)
         # featuresetcol.append("uni_FS"+str(index)+"_Top_"+str(k[j]))
         # Generating new dataset based on Selected Features
@@ -91,9 +92,16 @@ def main():
     # print ens
     ranks.append(ens)
     print ranks
-    featureset = load_csv(filename, ranks)
+    featureset = load_csv(filename, ranks,"uni")
     w = csv.writer(open("33FeatureSet.csv", "w"))
     w.writerows(featureset)
+    print "average"
+    avgranks=getRanksavg()
+    ens1 = ensemble(avgranks)
+    avgranks.append(ens1)
+    featureset1 = load_csv(filename,avgranks,"avg")
+    w = csv.writer(open("33FeatureSet.csv", "a"))
+    w.writerows(featureset1)
 
 
 main()
